@@ -18,9 +18,10 @@ jobs:
           distribution: 'corretto'
 
       - name: Build and test with SonarCloud
+        working-directory: ./simple-api
         run: mvn -B verify sonar:sonar \
-          -Dsonar.projectKey=devops-2024 \
-          -Dsonar.organization=devops-school \
+          -Dsonar.projectKey=UnNainGras \
+          -Dsonar.organization=DevOps_GithubActions \
           -Dsonar.host.url=https://sonarcloud.io \
           -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
           --file ./simple-api/pom.xml
